@@ -9,7 +9,8 @@ $(call inherit-product, vendor/xiaomi/vermeer-miuicamera/vermeer-miuicamera-vend
 
 # Public libraries
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/public.libraries-xiaomi.txt:$(TARGET_COPY_OUT_SYSTEM)/etc/public.libraries-xiaomi.txt
+    $(LOCAL_PATH)/configs/public.libraries-xiaomi.txt:$(TARGET_COPY_OUT_SYSTEM)/etc/public.libraries-xiaomi.txt \
+    $(LOCAL_PATH)/configs/public.libraries-miuicamera.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries-miuicamera.txt
 
 # Priv-app permission
 PRODUCT_COPY_FILES += \
