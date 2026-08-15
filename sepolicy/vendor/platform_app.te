@@ -1,5 +1,3 @@
-type vendor_panel_info_prop;
-
 allow platform_app app_data_file:file execute;
 allow platform_app vendor_hal_camerapostproc_xiaomi_hwservice:hwservice_manager find;
 
