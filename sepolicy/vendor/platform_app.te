@@ -1,15 +1,17 @@
-allow platform_app app_data_file:file execute;
-allow platform_app vendor_hal_camerapostproc_xiaomi_hwservice:hwservice_manager find;
+allow platform_app_all app_data_file:file execute;
+allow platform_app_all vendor_hal_camerapostproc_xiaomi_hwservice:hwservice_manager find;
+allow platform_app_all hal_misys_service:service_manager find;
 
-binder_call(platform_app, hal_camera_default)
+binder_call(platform_app_all, hal_camera_default)
 
-get_prop(platform_app, vendor_camera_prop)
-get_prop(platform_app, vendor_fp_prop)
-get_prop(platform_app, vendor_display_prop)
-get_prop(platform_app, vendor_panel_info_prop)
+get_prop(platform_app_all, vendor_camera_prop)
+get_prop(platform_app_all, vendor_camera_p3enable_prop)
+get_prop(platform_app_all, vendor_fp_prop)
+get_prop(platform_app_all, vendor_display_prop)
+get_prop(platform_app_all, vendor_panel_info_prop)
 
-allow platform_app hal_misys_service:service_manager find;
+allow platform_app_all proc_pressure_mem:file r_file_perms;
+allow platform_app_all proc_pressure_cpu:file r_file_perms;
+allow platform_app_all proc_pressure_io:file r_file_perms;
 
-allow platform_app proc_pressure_mem:file r_file_perms;
-allow platform_app proc_pressure_cpu:file r_file_perms;
-allow platform_app proc_pressure_io:file r_file_perms;
+allow platform_app_all adsprpcd_file:dir { search getattr };
